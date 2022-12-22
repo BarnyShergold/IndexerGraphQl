@@ -48,9 +48,9 @@ class Authorise
     /**
      * Get secret key from configuration
      *
-     * @return string
+     * @return string|null
      */
-    private function getSecretKey(): string
+    private function getSecretKey(): string|null
     {
         return $this->scopeConfig->getValue(self::INDEXER_SECRET_KEY);
     }
@@ -58,9 +58,9 @@ class Authorise
     /**
      * Get value passed in header to authorise
      *
-     * @return string
+     * @return string|null
      */
-    private function getAuthHeader(): string
+    private function getAuthHeader(): string|null
     {
         return $this->request->getHeader(self::AUTH_HEADER);
     }
