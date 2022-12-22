@@ -1,0 +1,20 @@
+# Copyright © Magento, Inc. All rights reserved.
+# See COPYING.txt for license details.
+
+type Query {
+    indexerState(indexer: [String!]): GetIndexerStateOutput @resolver(class: "Shergold\\IndexerGraphQl\\Model\\Resolver\\IndexerState") @doc(description: "Check indexer state.")
+}
+
+type GetIndexerStateOutput @doc(description: "Contains the results of an indexers state query.") {
+    items: [Indexes]! @doc(description: "The state of the index.")
+    total_count: Int @doc(description: "The number of indexes returned")
+}
+
+type Indexes @doc(description: "Contains fields that are common to all indexes.") {
+    id: String! @doc(description: "Index ID")
+    title: String! @doc(description: "Name of index.")
+    status: String! @doc(description: "Status of Index")
+    update_on: String! @doc(description: "Update mode - On Save OR Scheduled")
+    schedule_status: String @doc(description: "Status")
+    updated: String @doc(description: "Status")
+}

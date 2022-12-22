@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="security" translate="label" sortOrder="200">
+            <label>Security</label>
+        </tab>
+
+        <section id="graphql_security" translate="label" type="text" sortOrder="700" showInDefault="1"
+                 showInWebsite="0" showInStore="0">
+            <class>separator-top</class>
+            <label>GraphQL</label>
+            <tab>security</tab>
+            <resource>Shergold_IndexerGraphQl::config</resource>
+
+            <group id="indexer" translate="label" type="text" sortOrder="1000" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>Indexer State</label>
+                <field id="indexer_state_security_key" translate="label" type="text" sortOrder="100" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Secret Key</label>
+                    <comment><![CDATA[Secret key to be passed in Indexer-Auth-Key in header of GraphQL request]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
