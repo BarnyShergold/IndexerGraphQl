@@ -5,6 +5,7 @@ Provides GraphQl queries to access indexes information.
 # GraphQL Configuration
 
 ## GraphQL Query
+
 ```graphql
 query($indexes: [String!]) {
   indexerState(indexer: $indexes ) {
@@ -24,7 +25,7 @@ query($indexes: [String!]) {
 ## GraphQL Parameters
 The indexes array contains a list of the required indexes to be checked, for a full list of all indexes leave the array empty.
 
-```graphql
+```json
 {
   "indexes": [
     "catalog_data_exporter_product_attributes",
@@ -37,7 +38,7 @@ The indexes array contains a list of the required indexes to be checked, for a f
 **Indexer-Auth-Key** is required and needs to match the secret key that has been added to the Commerce Admin Configuration.
 
 ## GraphQL Sample Response
-```graphql
+```json
 {
   "data": {
     "indexerState": {
